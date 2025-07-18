@@ -65,7 +65,7 @@ const AuthPage = () => {
     setLoading(false);
   };
 
-  const handleSignUp = async (email: string, password: string, fullName: string) => {
+  const handleSignUp = async (email: string, password: string, fullName: string, role: string) => {
     setLoading(true);
     setError(null);
 
@@ -78,6 +78,7 @@ const AuthPage = () => {
         emailRedirectTo: redirectUrl,
         data: {
           full_name: fullName,
+          role: role,
         }
       }
     });
@@ -243,7 +244,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ onSubmit, loading }) => {
 };
 
 interface SignUpFormProps {
-  onSubmit: (email: string, password: string, fullName: string) => void;
+  onSubmit: (email: string, password: string, fullName: string, role: string) => void;
   loading: boolean;
 }
 
@@ -251,10 +252,11 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onSubmit, loading }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fullName, setFullName] = useState('');
+  const [role, setRole] = useState('student');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(email, password, fullName);
+    onSubmit(email, password, fullName, role);
   };
 
   return (
@@ -291,6 +293,22 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onSubmit, loading }) => {
           required
           placeholder="Create a password"
         />
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="signup-role">Role</Label>
+        <select
+          id="signup-role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="student">Student</option>
+          <option value="class_teacher">Class Teacher</option>
+          <option value="common_teacher">Common Teacher</option>
+          <option value="intern_teacher">Intern Teacher</option>
+          <option value="sub_admin">Sub Admin (Dean)</option>
+          <option value="admin">Admin</option>
+        </select>
       </div>
       <Button 
         type="submit" 
