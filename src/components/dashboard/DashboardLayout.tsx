@@ -142,39 +142,53 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       case 'admin':
         return [
           ...baseItems,
-          { icon: Users, label: 'User Management', href: '/dashboard/users' },
-          { icon: BookOpen, label: 'Academic Management', href: '/dashboard/academic' },
-          { icon: Calendar, label: 'School Calendar', href: '/dashboard/calendar' },
-          { icon: BarChart3, label: 'Analytics', href: '/dashboard/analytics' },
-          { icon: DollarSign, label: 'Finance', href: '/dashboard/finance' },
-          { icon: Settings, label: 'Settings', href: '/dashboard/settings' },
+          { icon: Users, label: 'Students', href: '/students' },
+          { icon: BookOpen, label: 'Classes', href: '/classes' },
+          { icon: BookOpen, label: 'Subjects', href: '/subjects' },
+          { icon: Calendar, label: 'Calendar', href: '/calendar' },
+          { icon: Award, label: 'Exams', href: '/exams' },
+          { icon: UserCheck, label: 'Attendance', href: '/attendance' },
+          { icon: Clock, label: 'Timetable', href: '/timetable' },
+          { icon: DollarSign, label: 'Finance', href: '/finance' },
+          { icon: Bell, label: 'Announcements', href: '/announcements' },
+          { icon: BarChart3, label: 'Reports', href: '/reports' },
+          { icon: Settings, label: 'Settings', href: '/settings' },
         ];
       case 'sub_admin':
         return [
           ...baseItems,
-          { icon: Users, label: 'Students & Teachers', href: '/dashboard/users' },
-          { icon: BookOpen, label: 'Academic', href: '/dashboard/academic' },
-          { icon: Calendar, label: 'Calendar', href: '/dashboard/calendar' },
-          { icon: BarChart3, label: 'Reports', href: '/dashboard/analytics' },
+          { icon: Users, label: 'Students', href: '/students' },
+          { icon: BookOpen, label: 'Classes', href: '/classes' },
+          { icon: BookOpen, label: 'Subjects', href: '/subjects' },
+          { icon: Calendar, label: 'Calendar', href: '/calendar' },
+          { icon: Award, label: 'Exams', href: '/exams' },
+          { icon: UserCheck, label: 'Attendance', href: '/attendance' },
+          { icon: Clock, label: 'Timetable', href: '/timetable' },
+          { icon: Bell, label: 'Announcements', href: '/announcements' },
+          { icon: BarChart3, label: 'Reports', href: '/reports' },
         ];
       case 'class_teacher':
       case 'common_teacher':
       case 'intern_teacher':
         return [
           ...baseItems,
-          { icon: Users, label: 'My Classes', href: '/dashboard/classes' },
-          { icon: BookOpen, label: 'Subjects', href: '/dashboard/subjects' },
-          { icon: UserCheck, label: 'Attendance', href: '/dashboard/attendance' },
-          { icon: Award, label: 'Assessments', href: '/dashboard/assessments' },
-          { icon: Calendar, label: 'Timetable', href: '/dashboard/timetable' },
+          { icon: Users, label: 'My Students', href: '/students' },
+          { icon: BookOpen, label: 'My Classes', href: '/classes' },
+          { icon: BookOpen, label: 'Subjects', href: '/subjects' },
+          { icon: Clock, label: 'Assignments', href: '/assignments' },
+          { icon: Award, label: 'Exams', href: '/exams' },
+          { icon: UserCheck, label: 'Attendance', href: '/attendance' },
+          { icon: Calendar, label: 'Timetable', href: '/timetable' },
+          { icon: Bell, label: 'Announcements', href: '/announcements' },
         ];
       case 'student':
         return [
           ...baseItems,
-          { icon: BookOpen, label: 'My Subjects', href: '/dashboard/subjects' },
-          { icon: Award, label: 'My Results', href: '/dashboard/results' },
-          { icon: Calendar, label: 'Timetable', href: '/dashboard/timetable' },
-          { icon: Clock, label: 'Assignments', href: '/dashboard/assignments' },
+          { icon: BookOpen, label: 'My Subjects', href: '/subjects' },
+          { icon: Clock, label: 'Assignments', href: '/assignments' },
+          { icon: Award, label: 'My Exams', href: '/exams' },
+          { icon: Calendar, label: 'Timetable', href: '/timetable' },
+          { icon: Bell, label: 'Announcements', href: '/announcements' },
         ];
       default:
         return baseItems;
