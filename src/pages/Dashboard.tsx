@@ -142,29 +142,38 @@ const Dashboard = () => {
     switch (role) {
       case 'admin':
         return [
-          { label: 'Manage Users', icon: Users, href: '/dashboard/users' },
-          { label: 'View Analytics', icon: TrendingUp, href: '/dashboard/analytics' },
-          { label: 'School Calendar', icon: Calendar, href: '/dashboard/calendar' },
-          { label: 'Finance Reports', icon: DollarSign, href: '/dashboard/finance' }
+          { label: 'Manage Students', icon: Users, href: '/students' },
+          { label: 'View Finance', icon: DollarSign, href: '/finance' },
+          { label: 'School Calendar', icon: Calendar, href: '/calendar' },
+          { label: 'View Reports', icon: TrendingUp, href: '/reports' }
         ];
       case 'sub_admin':
         return [
-          { label: 'Student Registration', icon: Users, href: '/dashboard/users' },
-          { label: 'Academic Reports', icon: BookOpen, href: '/dashboard/academic' },
-          { label: 'School Events', icon: Calendar, href: '/dashboard/calendar' }
+          { label: 'Manage Students', icon: Users, href: '/students' },
+          { label: 'Manage Classes', icon: School, href: '/classes' },
+          { label: 'School Calendar', icon: Calendar, href: '/calendar' },
+          { label: 'View Reports', icon: TrendingUp, href: '/reports' }
         ];
       case 'class_teacher':
       case 'common_teacher':
         return [
-          { label: 'Mark Attendance', icon: Clock, href: '/dashboard/attendance' },
-          { label: 'Grade Assignments', icon: Award, href: '/dashboard/assessments' },
-          { label: 'View Timetable', icon: Calendar, href: '/dashboard/timetable' }
+          { label: 'Mark Attendance', icon: Clock, href: '/attendance' },
+          { label: 'My Classes', icon: School, href: '/classes' },
+          { label: 'Assignments', icon: BookOpen, href: '/assignments' },
+          { label: 'View Timetable', icon: Calendar, href: '/timetable' }
+        ];
+      case 'intern_teacher':
+        return [
+          { label: 'My Classes', icon: School, href: '/classes' },
+          { label: 'View Timetable', icon: Calendar, href: '/timetable' },
+          { label: 'Assignments', icon: BookOpen, href: '/assignments' }
         ];
       case 'student':
         return [
-          { label: 'View Results', icon: Award, href: '/dashboard/results' },
-          { label: 'Check Timetable', icon: Calendar, href: '/dashboard/timetable' },
-          { label: 'My Assignments', icon: BookOpen, href: '/dashboard/assignments' }
+          { label: 'My Subjects', icon: BookOpen, href: '/subjects' },
+          { label: 'My Assignments', icon: Clock, href: '/assignments' },
+          { label: 'View Timetable', icon: Calendar, href: '/timetable' },
+          { label: 'My Exams', icon: Award, href: '/exams' }
         ];
       default:
         return [];
