@@ -278,6 +278,7 @@ export type Database = {
           grade_level: number
           id: string
           name: string
+          stream: string | null
           updated_at: string | null
         }
         Insert: {
@@ -288,6 +289,7 @@ export type Database = {
           grade_level: number
           id?: string
           name: string
+          stream?: string | null
           updated_at?: string | null
         }
         Update: {
@@ -298,6 +300,7 @@ export type Database = {
           grade_level?: number
           id?: string
           name?: string
+          stream?: string | null
           updated_at?: string | null
         }
         Relationships: [
